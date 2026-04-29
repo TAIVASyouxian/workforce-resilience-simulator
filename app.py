@@ -126,7 +126,7 @@ def color_risk_level(val):
         return "background-color: #fff1a8; color: #5c4a00; font-weight: bold;"
     return "background-color: #bff0c2; color: #064d1f; font-weight: bold;"
 
-styled_df = risk_df.style.applymap(color_gap, subset=["Gap"]).applymap(color_risk_level, subset=["Risk Level"])
+styled_df = risk_df.style.applymap(color_gap, subset=["Gap"]).map(color_risk_level, subset=["Risk Level"])
 st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
 # =========================
